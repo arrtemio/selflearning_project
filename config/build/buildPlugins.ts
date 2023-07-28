@@ -2,9 +2,11 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
-export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+
+    const plugins = [
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: paths.html
@@ -12,6 +14,16 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
             chunkFilename: 'css/[name].[contenthash].css'
-        })
+        }),
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(isDev)
+        }),
     ]
+
+    if (isDev) {
+        plugins.push(new ReactRefreshPlugin());
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+    }
+
+    return plugins;
 }
