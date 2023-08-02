@@ -1,4 +1,5 @@
-import { classNames } from './classNames';
+// Почему-то проходит только если вызывать через терминал, либо менять путь на ./classNames
+import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('test with single class', () => {

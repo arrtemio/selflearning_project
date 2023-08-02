@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
 import type { Config } from 'jest';
 
 const config: Config = {
@@ -31,6 +32,13 @@ const config: Config = {
         'node_modules',
     ],
 
+    modulePaths: [
+        '<rootDir>src',
+    ],
+
+    // The root directory that Jest should scan for tests and modules within
+    rootDir: '../../',
+
     // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
@@ -43,9 +51,6 @@ const config: Config = {
         'node',
     ],
 
-    // The root directory that Jest should scan for tests and modules within
-    rootDir: '../../',
-
     // The glob patterns Jest uses to detect test files
     testMatch: [
         // '**/__tests__/**/*.[jt]s?(x)',
@@ -53,6 +58,15 @@ const config: Config = {
         // Универсальная регулярка для Мак и Вины
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
+
+    moduleNameMapper: {
+        // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+        //     '<rootDir>/__mocks__/fileMock.js',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '\\.s?css$': 'identity-obj-proxy',
+    },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
