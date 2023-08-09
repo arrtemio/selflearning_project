@@ -20,7 +20,7 @@ interface SideBarProps {
 export const SideBar = ({ className }: SideBarProps) => {
     const [collapsed, setCollapsed] = useState(true);
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation');
 
     const handleToggle = () => {
         setCollapsed((prevState) => !prevState);
