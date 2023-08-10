@@ -6,5 +6,7 @@
   "toggle": "переключить",
   "Home": "Главная",
   "About": "О сайте",
-  "Короткий язык": "РУС"
+  "Короткий язык": "РУС",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }

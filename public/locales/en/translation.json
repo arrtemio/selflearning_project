@@ -6,5 +6,7 @@
   "toggle": "toggle",
   "Home": "Home",
   "About": "About",
-  "Короткий язык": "EN"
+  "Короткий язык": "EN",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
