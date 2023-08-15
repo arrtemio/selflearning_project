@@ -10,16 +10,22 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const CLOSE_DELAY = 200;
 
 export const Modal = (props: ModalProps) => {
     const {
-        children, isOpen, onClose, className,
+        children,
+        isOpen,
+        onClose,
+        className,
+        lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
     const mods: Record<string, boolean> = {
@@ -56,6 +62,14 @@ export const Modal = (props: ModalProps) => {
     const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    if (lazy && !isMounted) return null;
 
     return (
         <div className={classNames(cls.Modal, mods, [className])}>

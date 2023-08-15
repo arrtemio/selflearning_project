@@ -21,7 +21,11 @@ const Counter = () => {
 
     return (
         <div style={{
-            display: 'flex', flexDirection: 'column', gap: '15px', justifyContent: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '15px',
+            justifyContent: 'center',
+            maxWidth: '500px',
         }}
         >
             <h1 data-testid="counter-value">{value}</h1>
