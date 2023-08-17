@@ -73,3 +73,8 @@
 .size_s {
     font: var(--font-s);
 }
+
+.disabled {
+    opacity: 0.5;
+    cursor: default;
+}

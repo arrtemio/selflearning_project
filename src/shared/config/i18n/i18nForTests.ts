@@ -7,11 +7,6 @@ i18n
         lng: 'ru',
         fallbackLng: 'ru',
         debug: false,
-
-        interpolation: {
-            escapeValue: false, // not needed for react!!
-        },
-
         resources: { ru: { translationsNS: {} } },
     });
 
