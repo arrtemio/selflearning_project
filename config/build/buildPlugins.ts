@@ -22,10 +22,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 
     if (isDev) {
         plugins.push(new ReactRefreshPlugin());
-        plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }));
+        plugins.push(new webpack.HotModuleReplacementPlugin());
     }
 
     return plugins;
