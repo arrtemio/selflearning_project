@@ -34,17 +34,6 @@
     align-items: center;
 }
 
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
-.link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 20px;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 

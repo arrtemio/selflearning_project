@@ -1,10 +1,10 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from 'redux';
 
-export type ReducerList = {
+export type ReducersList = {
     [reducerKey in StateSchemaKey]?: Reducer;
 }
 
@@ -12,7 +12,7 @@ type ReducerListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
     children: ReactNode;
-    reducers: ReducerList;
+    reducers: ReducersList;
 }
 
 const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {

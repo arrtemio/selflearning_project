@@ -1,20 +1,20 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { useAppDispatch } from 'app/providers/StoreProvider';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
     className?: string;
 }
 
-export const NavBar = ({ className }: NavBarProps) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
@@ -65,4 +65,4 @@ export const NavBar = ({ className }: NavBarProps) => {
                 && <LoginModal isOpen={isOpen} onClose={handleCloseLoginModal} />}
         </>
     );
-};
+});

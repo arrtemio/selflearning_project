@@ -5,9 +5,9 @@ import { NavBar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 
 import './styles/index.scss';
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import { useEffect } from 'react';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 const App = () => {
     const { theme } = useTheme();
