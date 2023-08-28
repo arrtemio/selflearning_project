@@ -7,9 +7,6 @@ const meta = {
     title: 'pages/HomePage',
     component: HomePage,
     tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    },
 } satisfies Meta<typeof HomePage>;
 
 export default meta;

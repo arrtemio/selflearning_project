@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
 import {
     MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
@@ -28,7 +28,7 @@ export const Modal = (props: ModalProps) => {
     const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.closing]: isClosing,
     };

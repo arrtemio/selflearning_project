@@ -8,9 +8,7 @@ const meta = {
     title: 'features/LoginForm',
     component: LoginForm,
     tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    },
+
     decorators: [StoreDecorator({
         loginForm: { username: 'arrtemio', password: '123' },
     })],
@@ -19,28 +17,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 
-export const WithError: Story = {
-    args: {},
-};
+export const WithError: Story = {};
 
 WithError.decorators = [StoreDecorator({
-    loginForm: { username: 'arrtemio', password: '123', error: 'Error' },
+    loginForm: { error: 'Error' },
 })];
 
-export const WithLoading: Story = {
-
-};
+export const WithLoading: Story = {};
 
 WithLoading.decorators = [StoreDecorator({
-    loginForm: { username: 'arrtemio', password: '123', isLoading: true },
+    loginForm: { isLoading: true },
 })];
 
-export const PrimaryDark: Story = {
-    args: {},
-};
+export const PrimaryDark: Story = {};
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
