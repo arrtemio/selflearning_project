@@ -4,5 +4,12 @@
   "Your name": "Your name",
   "Your username": "Your username",
   "Your age": "Your age",
-  "Your country": "Your country"
+  "Your country": "Your country",
+  "Произошла ошибка при загрузке профиля": "Произошла ошибка при загрузке профиля",
+  "Попробуйте обновить страницу": "Попробуйте обновить страницу",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your city": "Your city",
+  "Your avatar": "Your avatar",
+  "Selected currency": "Selected currency"
 }
