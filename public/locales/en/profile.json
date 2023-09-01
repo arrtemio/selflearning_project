@@ -11,5 +11,9 @@
   "Save": "Save",
   "Your city": "Your city",
   "Your avatar": "Your avatar",
-  "Selected currency": "Selected currency"
+  "Selected currency": "Selected currency",
+  "Incorrect age": "Incorrect age",
+  "Incorrect username or name": "Incorrect username or name",
+  "Server error try to save later": "Server error try to save later",
+  "Server has no data": "Server has no data"
 }

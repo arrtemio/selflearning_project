@@ -11,5 +11,10 @@
   "Save": "Сохранить",
   "Your city": "Ваш город",
   "Your avatar": "Ваш аватар",
-  "Selected currency": "Выбранная валюта"
+  "Selected currency": "Выбранная валюта",
+  "Incorrect age": "Некорректный возраст",
+  "Incorrect username or name": "Пустое поле име или юзернейм",
+  "Server error try to save later": "Ошибка сервера, попробуйте сохранить позже",
+  "Server has no data": "Сервер не получил данных"
+
 }
